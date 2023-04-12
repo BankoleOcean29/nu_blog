@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'contact.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,10 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Singing Orange',
+      title: 'Silicon effect',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Delicious Handrawn'),
-      home: Blog(myName: '', myEmail: ''),
+      home: Blog(),
     );
   }
 }
@@ -22,12 +24,7 @@ class MyApp extends StatelessWidget {
 class Blog extends StatefulWidget {
   const Blog({
     Key? key,
-    required this.myName,
-    required this.myEmail,
   }) : super(key: key);
-
-  final String myName;
-  final String myEmail;
 
   @override
   State<Blog> createState() => _BlogState();
@@ -92,7 +89,7 @@ class _BlogState extends State<Blog> {
                                   0xff000000,
                                 ),
                                 fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                                fontWeight: FontWeight.w600)),
                       ),
                       const SizedBox(
                         width: 20,
@@ -103,17 +100,7 @@ class _BlogState extends State<Blog> {
                   const SizedBox(
                     height:20,
                   ),
-                  Text(
-                    'Bankolescripted@gmail.com',
-                    style: TextStyle(
-                        color: isHover2
-                            ? Color(0xffBBBE64)
-                            : Color(
-                          0xff000000,
-                        ),
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400),
-                  ),
+
                   const SizedBox(
                     height:20,
                   ),
@@ -135,7 +122,7 @@ class _BlogState extends State<Blog> {
                     ),
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 100,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -158,11 +145,16 @@ class _BlogState extends State<Blog> {
                     height: 40,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 90.0, left: 220),
+                    padding: const EdgeInsets.only(top: 70.0, left: 220),
                     child: SizedBox(
                       height: 70,
                       width: 70,
-                      child: FloatingActionButton(onPressed: () {},
+                      child: FloatingActionButton(onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Mail()),
+                        );
+                      },
                       backgroundColor: const Color(0xffBBBE64),
                       child: Icon(Icons.mail),),
                     ),
