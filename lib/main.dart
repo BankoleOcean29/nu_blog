@@ -46,16 +46,16 @@ class _BlogState extends State<Blog> {
               return Column(
                 children: [
                   const SizedBox(
-                    height: 50,
+                    height: 26,
                   ),
                   const Center(
                     child: Text(
                       'Silicon effect',
-                      style: TextStyle(fontSize: 30, color: Color(0xffBBBE64)),
+                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.w800, color: Color(0xffBBBE64)),
                     ),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 20,
                   ),
                   Container(
                     height: 5,
@@ -81,7 +81,7 @@ class _BlogState extends State<Blog> {
                             isHover = false;
                           });
                         },
-                        child: Text('hosted by Bankole Babarinsa.',
+                        child: Text('Bankole Babarinsa.',
                             style: TextStyle(
                                 color: isHover
                                     ? Color(0xffBBBE64)
@@ -98,11 +98,7 @@ class _BlogState extends State<Blog> {
                     ],
                   ),
                   const SizedBox(
-                    height:20,
-                  ),
-
-                  const SizedBox(
-                    height:20,
+                    height:60,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -122,7 +118,7 @@ class _BlogState extends State<Blog> {
                     ),
                   ),
                   const SizedBox(
-                    height: 100,
+                    height: 70,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -161,7 +157,9 @@ class _BlogState extends State<Blog> {
                   )
                 ],
               );
-            } else {
+            }
+            else
+            {
               return Column(
                 children: [
                   const SizedBox(
@@ -170,7 +168,7 @@ class _BlogState extends State<Blog> {
                   const Center(
                     child: Text(
                       'Silicon effect',
-                      style: TextStyle(fontSize: 100, color: Color(0xffBBBE64)),
+                      style: TextStyle(fontSize: 100, fontWeight: FontWeight.w800, color: Color(0xffBBBE64)),
                     ),
                   ),
                   const SizedBox(
@@ -200,15 +198,21 @@ class _BlogState extends State<Blog> {
                             isHover = false;
                           });
                         },
-                        child: Text('hosted by Bankole Babarinsa.',
-                            style: TextStyle(
-                                color: isHover
-                                    ? Color(0xffBBBE64)
-                                    : Color(
-                                        0xff000000,
-                                      ),
-                                fontSize: 40,
-                                fontWeight: FontWeight.w700)),
+                        child: Expanded(
+                          child: Container(
+                            child: Center(
+                              child: Text('hosted by Bankole Babarinsa.',
+                                  style: TextStyle(
+                                      color: isHover
+                                          ? Color(0xffBBBE64)
+                                          : Color(
+                                              0xff000000,
+                                            ),
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.w700)),
+                            ),
+                          ),
+                        ),
                       ),
                       const SizedBox(
                         width: 600,
