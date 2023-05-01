@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nu_blog/articles/article_one.dart';
 
 import 'contact.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Silicon effect',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Delicious Handrawn'),
+      theme: ThemeData(fontFamily: 'Mali'),
       home: Blog(),
     );
   }
@@ -38,7 +39,7 @@ class _BlogState extends State<Blog> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xff8E5572),
+        backgroundColor: const Color(0xff0091EA),
         body: SingleChildScrollView(
           child: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
@@ -185,7 +186,7 @@ class _BlogState extends State<Blog> {
                   Row(
                     children: [
                       const SizedBox(
-                        width: 100,
+                        width: 80,
                       ),
                       MouseRegion(
                         onEnter: (PointerEvent event) {
@@ -208,14 +209,16 @@ class _BlogState extends State<Blog> {
                                           : Color(
                                               0xff000000,
                                             ),
-                                      fontSize: 40,
+                                      fontSize: 30,
                                       fontWeight: FontWeight.w700)),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        width: 600,
+                      const Expanded(
+                        child: SizedBox(
+                          //width: 600,
+                        ),
                       ),
                       MouseRegion(
                         onEnter: (PointerEvent event) {
@@ -228,51 +231,74 @@ class _BlogState extends State<Blog> {
                             isHover2 = false;
                           });
                         },
-                        child: Text(
-                          'Bankolescripted@gmail.com',
-                          style: TextStyle(
-                              color: isHover2
-                                  ? Color(0xffBBBE64)
-                                  : Color(
-                                      0xff000000,
-                                    ),
-                              fontSize: 40,
-                              fontWeight: FontWeight.w700),
+                        child: Expanded(
+                          child: Container(
+                            child: Center(
+                              child: Text(
+                                'Bankolescripted@gmail.com',
+                                style: TextStyle(
+                                    color: isHover2
+                                        ? Color(0xffBBBE64)
+                                        : Color(
+                                            0xff000000,
+                                          ),
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
+                      SizedBox(width: 90,)
                     ],
                   ),
                   const SizedBox(
                     height: 250,
                   ),
-                  Container(
-                    height: 100,
-                    width: 1000,
-                    color: const Color(0xffBCAA99),
-                    child: const Center(
-                      child: Text(
-                        'Understanding mobile applications',
-                        style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xff443850)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ArticleOne()),
+                      );
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 1000,
+                      color: const Color(0xffBCAA99),
+                      child: const Center(
+                        child: Text(
+                          'Understanding mobile applications',
+                          style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff443850)),
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(
                     height: 140,
                   ),
-                  Container(
-                    height: 100,
-                    width: 1000,
-                    color: const Color(0xffBCAA99),
-                    child: const Center(
-                      child: Text(
-                        'How could you build an MVP',
-                        style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xff443850)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Mail()),
+                      );
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 1000,
+                      color: const Color(0xffBCAA99),
+                      child: const Center(
+                        child: Text(
+                          'How could you build an MVP',
+                          style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff443850)),
+                        ),
                       ),
                     ),
                   ),

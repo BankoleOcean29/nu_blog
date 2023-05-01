@@ -74,3 +74,6 @@ flutter:
     - family: Delicious Handrawn
       fonts:
         - asset: fonts/IndieFlower-Regular.ttf
+    - family: Mali
+      fonts:
+        - asset: fonts/Mali-Bold.ttf
