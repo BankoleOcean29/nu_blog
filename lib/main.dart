@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Silicon effect',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Mali'),
-      home: Blog(),
+      home: const Blog(),
     );
   }
 }
@@ -52,7 +52,10 @@ class _BlogState extends State<Blog> {
                   const Center(
                     child: Text(
                       'Silicon effect',
-                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.w800, color: Color(0xffBBBE64)),
+                      style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xffBBBE64)),
                     ),
                   ),
                   const SizedBox(
@@ -87,33 +90,41 @@ class _BlogState extends State<Blog> {
                                 color: isHover
                                     ? Color(0xffBBBE64)
                                     : Color(
-                                  0xff000000,
-                                ),
+                                        0xff000000,
+                                      ),
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600)),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-
                     ],
                   ),
                   const SizedBox(
-                    height:60,
+                    height: 60,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Container(
-                      height: 100,
-                      width: 1000,
-                      color: const Color(0xffBCAA99),
-                      child: const Center(
-                        child: Text(
-                          'Understanding mobile applications',
-                          style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w800,
-                              color: Color(0xff443850)),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ArticleOne()),
+                        );
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 1000,
+                        color: const Color(0xffBCAA99),
+                        child: const Center(
+                          child: Text(
+                            'Understanding mobile applications',
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xff443850)),
+                          ),
                         ),
                       ),
                     ),
@@ -146,21 +157,22 @@ class _BlogState extends State<Blog> {
                     child: SizedBox(
                       height: 70,
                       width: 70,
-                      child: FloatingActionButton(onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Mail()),
-                        );
-                      },
-                      backgroundColor: const Color(0xffBBBE64),
-                      child: Icon(Icons.mail),),
+                      child: FloatingActionButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Mail()),
+                          );
+                        },
+                        backgroundColor: const Color(0xffBBBE64),
+                        child: Icon(Icons.mail),
+                      ),
                     ),
                   )
                 ],
               );
-            }
-            else
-            {
+            } else {
               return Column(
                 children: [
                   const SizedBox(
@@ -169,7 +181,10 @@ class _BlogState extends State<Blog> {
                   const Center(
                     child: Text(
                       'Silicon effect',
-                      style: TextStyle(fontSize: 100, fontWeight: FontWeight.w800, color: Color(0xffBBBE64)),
+                      style: TextStyle(
+                          fontSize: 100,
+                          fontWeight: FontWeight.w800,
+                          color: Color(0xffBBBE64)),
                     ),
                   ),
                   const SizedBox(
@@ -217,8 +232,8 @@ class _BlogState extends State<Blog> {
                       ),
                       const Expanded(
                         child: SizedBox(
-                          //width: 600,
-                        ),
+                            //width: 600,
+                            ),
                       ),
                       MouseRegion(
                         onEnter: (PointerEvent event) {
@@ -249,7 +264,9 @@ class _BlogState extends State<Blog> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 90,)
+                      SizedBox(
+                        width: 90,
+                      )
                     ],
                   ),
                   const SizedBox(
@@ -259,7 +276,8 @@ class _BlogState extends State<Blog> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const ArticleOne()),
+                        MaterialPageRoute(
+                            builder: (context) => const ArticleOne()),
                       );
                     },
                     child: Container(
